@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>materialdesignicons-webfont.ttf</file>
+        <file>icon.png</file>
+        <file>Message.qml</file>
+    </qresource>
+</RCC>
