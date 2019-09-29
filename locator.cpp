@@ -22,7 +22,7 @@ void Locator::addressAcquired()
 {
       QList<QGeoLocation> locations = data->locations();
       if(locations.size()>0){
-          emit addressUpdatedView("you are in " +locations[0].address().city());
+          emit addressUpdatedView(locations[0].address().city());
       }
       m_source->stopUpdates();
 

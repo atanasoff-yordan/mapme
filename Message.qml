@@ -29,7 +29,7 @@ Item {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
-            font.pixelSize: 20
+            font.pixelSize: 15
         }
     }
     function showMessage(msg){
@@ -44,7 +44,9 @@ Item {
 
 
 
+
+
 /*##^## Designer {
-    D{i:2;anchors_x:188;anchors_y:43}D{i:1;anchors_height:200;anchors_width:200;anchors_x:168;anchors_y:183}
+    D{i:1;anchors_height:200;anchors_width:200;anchors_x:168;anchors_y:183}D{i:2;anchors_x:188;anchors_y:43}
 }
  ##^##*/

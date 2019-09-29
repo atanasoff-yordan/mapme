@@ -4,5 +4,7 @@
         <file>materialdesignicons-webfont.ttf</file>
         <file>icon.png</file>
         <file>Message.qml</file>
+        <file>CalendarView.qml</file>
+        <file>SettingsView.qml</file>
     </qresource>
 </RCC>
