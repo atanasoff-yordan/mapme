@@ -39,24 +39,20 @@ Window {
         }
     }
 
-    function toggleCalendar(){
-        if( menu_option_1.text == "Location History" ){
-            calendar_view.x = 0
-            menu_option_1.text = "Map"
-        }else{
-            calendar_view.x = calendar_view.width*(-1)
-            menu_option_1.text = "Location History"
-        }
+    function showCalendar(){
+        calendar_view.x = 0
         settings_view.x = -settings_view.width
+         toggleMenu()
     }
-    function toggleSettings(){
-        if(settings_view.x < 0 ){
-            settings_view.x = 0
-        }else{
-            settings_view.x = settings_view.width*(-1)
-        }
+    function showSettings(){
+        settings_view.x = 0
         calendar_view.x = -calendar_view.width
-        menu_option_1.text = "Location History"
+         toggleMenu()
+    }
+    function showMap(){
+        calendar_view.x = -calendar_view.width
+        settings_view.x = -settings_view.width
+         toggleMenu()
     }
 
     Plugin {
@@ -166,14 +162,14 @@ Window {
                 anchors.rightMargin: 0
                 anchors.left: parent.left
                 anchors.leftMargin: 0
-                anchors.top: parent.top
-                anchors.topMargin: 20
+                anchors.top: menu_option_3.bottom
+                anchors.topMargin: 0
                 font.pixelSize: 20
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        toggleMenu()
-                        toggleCalendar()
+
+                        showCalendar()
                     }
                 }
             }
@@ -197,8 +193,35 @@ Window {
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        toggleMenu()
-                        toggleSettings()
+
+                        showSettings()
+                    }
+                }
+            }
+
+            Text {
+                id: menu_option_3
+                x: -18
+                height: 50
+                color: "#ffffff"
+                text: qsTr("Map")
+                MouseArea {
+                    anchors.topMargin: 10
+                    anchors.fill: parent
+                }
+                anchors.right: parent.right
+                anchors.leftMargin: 0
+                anchors.rightMargin: 0
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 20
+                anchors.left: parent.left
+                verticalAlignment: Text.AlignVCenter
+                anchors.top: parent.top
+                anchors.topMargin: 0
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+                        showMap()
                     }
                 }
             }
@@ -310,13 +333,15 @@ Window {
 
 
 
+
+
 /*##^## Designer {
     D{i:3;anchors_width:200;anchors_x:174;anchors_y:52}D{i:4;anchors_x:324;anchors_y:18}
 D{i:7;anchors_height:200;anchors_x:42;anchors_y:110}D{i:6;anchors_height:200;anchors_x:42;anchors_y:110}
 D{i:10;anchors_x:324;anchors_y:18}D{i:9;anchors_x:79;anchors_y:31}D{i:11;anchors_height:200;anchors_x:324;anchors_y:18}
-D{i:8;anchors_x:79;anchors_y:31}D{i:12;anchors_height:200;anchors_x:42;anchors_y:110}
-D{i:19;anchors_x:230;anchors_y:56}D{i:18;anchors_x:22;anchors_y:18}D{i:20;anchors_x:230;anchors_y:56}
-D{i:21;anchors_x:230;anchors_y:56}D{i:22;anchors_height:200;anchors_y:106}D{i:24;anchors_height:200;anchors_width:200;anchors_x:161;anchors_y:0}
+D{i:8;anchors_x:79;anchors_y:31}D{i:17;anchors_y:-16}D{i:12;anchors_height:200;anchors_x:42;anchors_y:110}
+D{i:21;anchors_x:230;anchors_y:56}D{i:20;anchors_x:22;anchors_y:18}D{i:22;anchors_x:230;anchors_y:56}
+D{i:23;anchors_x:230;anchors_y:56}D{i:24;anchors_height:200;anchors_y:106}D{i:26;anchors_height:200;anchors_width:200;anchors_x:161;anchors_y:0}
 D{i:5;anchors_height:200;anchors_x:42;anchors_y:110}
 }
  ##^##*/

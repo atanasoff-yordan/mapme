@@ -16,7 +16,7 @@ Item {
         property bool stateVisible: true
         id: rectangle
         color: "#000000"
-        radius: 15
+        radius: 5
         border.width: 0
         anchors.fill: parent
         opacity: 0.0
